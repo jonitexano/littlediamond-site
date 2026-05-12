@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Little Diamond</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #F4F3EF;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Fraunces', Georgia, serif;
+      color: #1a1a1a;
+      padding: 2rem;
+    }
+
+    .grid-bg {
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(42,95,168,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(42,95,168,0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 480px;
+      opacity: 0;
+      animation: fadeUp 0.9s ease forwards 0.1s;
+    }
+
+    .diamond {
+      width: 40px;
+      height: 40px;
+      background-color: #2A5FA8;
+      transform: rotate(45deg);
+      margin: 0 auto 2.8rem;
+    }
+
+    .label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #2A5FA8;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      font-weight: 300;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+      color: #1a1a1a;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: #2A5FA8;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 2.5rem;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background-color: #2A5FA8;
+      color: #F4F3EF;
+      text-decoration: none;
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      padding: 0.85rem 1.8rem;
+      border-radius: 2px;
+      transition: background-color 0.2s ease;
+    }
+
+    .cta:hover {
+      background-color: #1d4a87;
+    }
+
+    .cta svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .phrase {
+      margin-top: 3.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #aaa;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="container">
+    <div class="diamond"></div>
+    <p class="label">Little Diamond</p>
+    <h1>Algo novo está<br><em>a ser preparado.</em></h1>
+    <p>O site está temporariamente em manutenção.<br>Enquanto isso, encontras-nos no Instagram.</p>
+    <a class="cta" href="https://www.instagram.com/mr_little_diamond" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.975 1.246 2.242 1.308 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.975.975-2.242 1.246-3.608 1.308-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608.975-.975 2.242-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.197.157 3.355.673 1.978 2.05.6 3.426.084 5.268 0 7.122-.014 8.332 0 8.741 0 12c0 3.259.014 3.668.072 4.948.085 1.854.601 3.696 1.978 5.073 1.377 1.377 3.219 1.893 5.073 1.978C8.332 23.986 8.741 24 12 24s3.668-.014 4.948-.072c1.854-.085 3.696-.601 5.073-1.978 1.377-1.377 1.893-3.219 1.978-5.073.058-1.28.072-1.689.072-4.948s-.014-3.668-.072-4.948c-.085-1.854-.601-3.696-1.978-5.073C20.644.673 18.802.157 16.948.072 15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+      </svg>
+      Seguir no Instagram
+    </a>
+    <p class="phrase">O detalhe mau destrói. O detalhe bom fica para sempre.</p>
+  </div>
+</body>
+</html>
